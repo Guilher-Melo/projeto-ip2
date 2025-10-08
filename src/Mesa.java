@@ -1,4 +1,5 @@
 public class Mesa {
+
     private int numero;
     private int capacidade;
     private StatusMesa status;

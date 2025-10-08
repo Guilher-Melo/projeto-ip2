@@ -1,19 +1,27 @@
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido {
-    private LocalDate dataHora;
+    private LocalDateTime dataHora;
     private double valorTotal;
+    private Cliente cliente;
+    private StatusPedido status;
+    private Pagamento pagamento;
+    private List<ItemPedido> itens;
 
-    public Pedido(LocalDate dataHora, double valorTotal) {
+    public Pedido(LocalDateTime dataHora, Cliente cliente) {
         this.dataHora = dataHora;
-        this.valorTotal = valorTotal;
+        this.cliente = cliente;
+        this.itens = new ArrayList<>();
+        this.valorTotal = 0.0;
     }
 
-    public LocalDate getDataHora() {
+    public LocalDateTime getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(LocalDate dataHora) {
+    public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
 
@@ -25,17 +33,58 @@ public class Pedido {
         this.valorTotal = valorTotal;
     }
 
-    public double calcularTotal(){
-        // Implementar lógica para calcular o total do pedido
-        return 0.0;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void atualizarStatus(){
-        // Implementar lógica para atualizar o status do pedido
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public double fecharConta(){
-        // Implementar lógica para fechar a conta do pedido
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
+    public Pagamento getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
+    }
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
+    }
+
+    public void adicionarItem(ItemPedido item) {
+        this.itens.add(item);
+    }
+
+    public double calcularTotal() {
+        double total = 0.0;
+        for (ItemPedido item : itens) {
+            total += item.getItemCardapio().getPreco() * item.getQuantidade();
+        }
+        this.valorTotal = total;
         return valorTotal;
+    }
+
+    public void atualizarStatus(StatusPedido novoStatus) {
+        this.status = novoStatus;
+        System.out.println("Status do pedido: " + novoStatus.getNome());
+    }
+
+    public double fecharConta() {
+        System.out.println("Fechando a conta do pedido...");
+        return calcularTotal();
     }
 }

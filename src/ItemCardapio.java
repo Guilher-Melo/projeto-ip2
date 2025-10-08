@@ -1,5 +1,3 @@
-
-
 public class ItemCardapio {
 
     private String nome;

@@ -1,19 +1,23 @@
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Reserva {
-    private LocalDate dataHora;
+    private LocalDateTime dataHora;
     private int numeroPessoas;
+    private Cliente cliente;
+    private Mesa mesa;
 
-    public Reserva(LocalDate dataHora, int numeroPessoas) {
+    public Reserva(LocalDateTime dataHora, int numeroPessoas, Cliente cliente, Mesa mesa) {
         this.dataHora = dataHora;
         this.numeroPessoas = numeroPessoas;
+        this.cliente = cliente;
+        this.mesa = mesa;
     }
 
-    public LocalDate getDataHora() {
+    public LocalDateTime getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(LocalDate dataHora) {
+    public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
 
@@ -25,7 +29,24 @@ public class Reserva {
         this.numeroPessoas = numeroPessoas;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
+
     public void cancelarReserva() {
-        // Lógica pra cancelar a reserva
+        // Lógica para cancelar a reserva
+        System.out.println("Reserva em nome de " + cliente.getNome() + " para a mesa " + mesa.getNumero() + " foi cancelada.");
     }
 }

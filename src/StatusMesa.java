@@ -1,4 +1,5 @@
 public class StatusMesa {
+
     private int id;
     private String nome;
 
