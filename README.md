@@ -3,7 +3,7 @@
 ## Integrantes
 
 1) Bruno Rodrigues de Souza - email
-2) João Vítor de Souza Santos - email
+2) João Vítor de Souza Santos - jvfacr2019@gmail.com
 3) Guilherme de Souza Melo - guilherme.dsouza87@gmail.com
 4) Luiz Eduardo Negri Silva Calábria - email
 5) Zaque Mateus Neves da Silva - email
