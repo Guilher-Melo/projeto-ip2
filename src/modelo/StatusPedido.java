@@ -1,9 +1,10 @@
-public class StatusMesa {
+package modelo;
 
+public class StatusPedido {
     private int id;
     private String nome;
 
-    public StatusMesa(int id, String nome) {
+    public StatusPedido(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }

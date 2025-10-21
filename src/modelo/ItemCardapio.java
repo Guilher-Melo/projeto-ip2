@@ -1,3 +1,7 @@
+package modelo;
+
+import modelo.CategoriaItem;
+
 public class ItemCardapio {
 
     private String nome;
@@ -54,4 +58,3 @@ public class ItemCardapio {
         this.disponivel = disponivel;
     }
 }
-

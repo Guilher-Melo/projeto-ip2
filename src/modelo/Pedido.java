@@ -1,6 +1,13 @@
+package modelo;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import modelo.Cliente;
+import modelo.StatusPedido;
+import modelo.Pagamento;
+import modelo.ItemPedido;
 
 public class Pedido {
     private LocalDateTime dataHora;

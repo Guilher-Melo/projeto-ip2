@@ -1,3 +1,7 @@
+package modelo;
+
+import modelo.StatusMesa;
+
 public class Mesa {
 
     private int numero;

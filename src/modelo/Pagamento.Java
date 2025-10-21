@@ -1,4 +1,7 @@
+package modelo;
+
 import java.time.LocalDateTime;
+import modelo.MetodoPagamento;
 
 public class Pagamento {
 

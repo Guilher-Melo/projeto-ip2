@@ -1,3 +1,7 @@
+package modelo;
+
+import modelo.ItemCardapio;
+
 public class ItemPedido {
 
     private int quantidade;

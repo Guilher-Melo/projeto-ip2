@@ -1,9 +1,11 @@
-public class CategoriaItem {
+package modelo;
+
+public class MetodoPagamento {
 
     private int id;
     private String nome;
 
-    public CategoriaItem(int id, String nome) {
+    public MetodoPagamento(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -24,5 +26,3 @@ public class CategoriaItem {
         this.nome = nome;
     }
 }
-
-

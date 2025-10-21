@@ -1,8 +1,11 @@
-public class StatusPedido {
+package modelo;
+
+public class CategoriaItem {
+
     private int id;
     private String nome;
 
-    public StatusPedido(int id, String nome) {
+    public CategoriaItem(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }

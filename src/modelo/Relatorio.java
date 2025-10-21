@@ -1,3 +1,5 @@
+package modelo;
+
 public class Relatorio {
 
     public void gerarVendasPorPeriodo() {

@@ -1,4 +1,8 @@
+package modelo;
+
 import java.time.LocalDateTime;
+import modelo.Cliente;
+import modelo.Mesa;
 
 public class Reserva {
     private LocalDateTime dataHora;
