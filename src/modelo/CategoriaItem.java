@@ -1,11 +1,17 @@
 package modelo;
 
-public class CategoriaItem {
+public enum CategoriaItem {
+    ENTRADA(1, "Entrada"),
+    PRATO_PRINCIPAL(2, "Prato Principal"),
+    SOBREMESA(3, "Sobremesa"),
+    BEBIDA(4, "Bebida"),
+    BEBIDA_ALCOOLICA(5, "Bebida Alcoólica"),
+    LANCHE(6, "Lanche");
 
-    private int id;
-    private String nome;
+    private final int id;
+    private final String nome;
 
-    public CategoriaItem(int id, String nome) {
+    CategoriaItem(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -14,15 +20,16 @@ public class CategoriaItem {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static CategoriaItem getById(int id) {
+        for (CategoriaItem categoria : values()) {
+            if (categoria.getId() == id) {
+                return categoria;
+            }
+        }
+        throw new IllegalArgumentException("Categoria não encontrada para ID: " + id);
     }
 }

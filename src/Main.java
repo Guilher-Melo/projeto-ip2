@@ -26,7 +26,7 @@ public class Main {
 
         System.out.println("\n--- Testando REQ14, 16, 23 ---");
 
-        StatusMesa statusLivre = new StatusMesa(1, "Livre");
+        StatusMesa statusLivre = StatusMesa.LIVRE;
         Mesa mesaSimulada = new Mesa(5, 4, statusLivre);
 
         System.out.println("Testando REQ23 (Excesso de capacidade):");
@@ -38,13 +38,13 @@ public class Main {
 
         System.out.println("\nTestando REQ16 (Cancelamento OK):");
         // (Buscar a reserva no repositório para o teste)
-        Reserva reserva = ((RepositorioReservaArray)repoReserva).listarTodas().get(0);
+        Reserva reserva = ((RepositorioReservaArray) repoReserva).listarTodas().get(0);
         fachada.cancelarReserva(reserva); // Deve funcionar
 
         System.out.println("\nTestando REQ16 (Cancelamento Atrasado):");
         LocalDateTime dataReservaUrgente = LocalDateTime.now().plusMinutes(30);
         fachada.fazerReserva("98888-0001", mesaSimulada, dataReservaUrgente, 2);
-        Reserva reservaUrgente = ((RepositorioReservaArray)repoReserva).listarTodas().get(0);
+        Reserva reservaUrgente = ((RepositorioReservaArray) repoReserva).listarTodas().get(0);
         fachada.cancelarReserva(reservaUrgente); // Deve falhar
     }
 }

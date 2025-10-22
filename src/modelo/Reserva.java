@@ -51,6 +51,7 @@ public class Reserva {
 
     public void cancelarReserva() {
         // Lógica para cancelar a reserva
-        System.out.println("Reserva em nome de " + cliente.getNome() + " para a mesa " + mesa.getNumero() + " foi cancelada.");
+        System.out.println(
+                "Reserva em nome de " + cliente.getNome() + " para a mesa " + mesa.getNumero() + " foi cancelada.");
     }
 }
