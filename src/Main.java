@@ -8,25 +8,21 @@ public class Main {
 
         // --- 1. Configuração da Fachada com TODOS os repositórios ---
 
-        // Instancia os repositórios que você já tinha
+        // Instancia os repositórios
         IRepositorioCliente repoCliente = new RepositorioClienteArray();
         IRepositorioReserva repoReserva = new RepositorioReservaArray();
-
-        // Instancia os NOVOS repositórios
         IRepositorioMesa repoMesa = new RepositorioMesaArray();
         IRepositorioPedido repoPedido = new RepositorioPedidoArray();
         IRepositorioItemCardapio repoItem = new RepositorioItemCardapioArray();
         IRepositorioFuncionario repoFunc = new RepositorioFuncionarioArray();
 
-        // Passa TODOS eles para a Fachada
         Fachada fachada = new Fachada(
                 repoCliente,
                 repoReserva,
                 repoMesa,
                 repoPedido,
                 repoItem,
-                repoFunc
-        );
+                repoFunc);
 
         System.out.println("--- Sistema de Restaurante Iniciado ---");
         System.out.println("\n--- Teste do Pacote 2: Clientes e Reservas (Existente) ---");
