@@ -1,11 +1,16 @@
 package modelo;
 
-public class MetodoPagamento {
+public enum MetodoPagamento {
+    DINHEIRO(1, "Dinheiro"),
+    CARTAO_CREDITO(2, "Cartão de Crédito"),
+    CARTAO_DEBITO(3, "Cartão de Débito"),
+    PIX(4, "PIX"),
+    VALE_REFEICAO(5, "Vale Refeição");
 
-    private int id;
-    private String nome;
+    private final int id;
+    private final String nome;
 
-    public MetodoPagamento(int id, String nome) {
+    MetodoPagamento(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -14,15 +19,16 @@ public class MetodoPagamento {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public static MetodoPagamento getById(int id) {
+        for (MetodoPagamento metodo : values()) {
+            if (metodo.getId() == id) {
+                return metodo;
+            }
+        }
+        throw new IllegalArgumentException("Método de pagamento não encontrado para ID: " + id);
     }
 }
