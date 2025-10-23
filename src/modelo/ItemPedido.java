@@ -1,7 +1,5 @@
 package modelo;
 
-import modelo.ItemCardapio;
-
 public class ItemPedido {
 
     private int quantidade;
@@ -36,5 +34,17 @@ public class ItemPedido {
 
     public void setItemCardapio(ItemCardapio itemCardapio) {
         this.itemCardapio = itemCardapio;
+    }
+
+    /**
+     * ADICIONADO: Conforme diagrama UML.
+     * Calcula o subtotal deste item (preço * quantidade).
+     */
+    public double calcularSubtotal() {
+        if (itemCardapio != null) {
+            // Usa o getPreco() do ItemCardapio
+            return itemCardapio.getPreco() * quantidade;
+        }
+        return 0.0;
     }
 }

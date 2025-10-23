@@ -1,13 +1,12 @@
 package repositorio;
 
-import modelo.Mesa;
 import java.util.List;
+import modelo.Mesa;
 
-// Interface
 public interface IRepositorioMesa {
-
     Mesa buscarPorNumero(int numero);
     void atualizar(Mesa mesa);
-    void cadastrar(Mesa mesa); // Adicionado para os testes
+    void cadastrar(Mesa mesa);
+    void remover(Mesa mesa); 
     List<Mesa> listarTodas();
 }
